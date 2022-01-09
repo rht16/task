@@ -11,10 +11,10 @@ const [value, setValue] = useState(false)
 const handle=()=>{
     setCount(count+1)
   
-    axios.post('http://localhost:9900/add',{
+    axios.post('https://task-rht.herokuapp.com/add',{
         task: data
     }).then((res)=>{
-        window.alert("added")
+        window.alert("Added")
          
         setTask(data)
      
@@ -32,10 +32,10 @@ const update=() => {
 const updateReturn=() => {
     setValue(false)
     setCount(count+1)
-    axios.post('http://localhost:9900/update',{
+    axios.post('https://task-rht.herokuapp.com/update',{
         task: data
     }).then((res)=>{
-        window.alert("added")
+        window.alert("Updated")
         setData("")
         setTask(data)
     }).catch((err)=>{
